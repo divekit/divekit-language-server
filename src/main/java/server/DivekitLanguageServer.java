@@ -26,7 +26,6 @@ public class DivekitLanguageServer implements LanguageServer, LanguageClientAwar
 
         initializeResult.setServerInfo(info);
 
-        //TODO - check other sync kinds then full
         initializeResult.getCapabilities().setTextDocumentSync(TextDocumentSyncKind.Full);
         CompletionOptions completionOptions = new CompletionOptions();
         initializeResult.getCapabilities().setCompletionProvider(completionOptions);
