@@ -62,7 +62,7 @@ public class DivekitTextDocumentService implements TextDocumentService {
             Hover hover = new Hover();
             MarkupContent content = new MarkupContent();
             content.setKind("Completion Item");
-            content.setValue("A completion Item provided by the Divekit Language Server");
+            content.setValue("A completion item provided by the Divekit Language Server");
 
             hover.setContents(content);
 

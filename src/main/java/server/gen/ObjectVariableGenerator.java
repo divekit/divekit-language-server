@@ -25,8 +25,8 @@ public class ObjectVariableGenerator {
 
     public ArrayList<String> readVariables() {
 
+        // reading the variationsConfig file
         Object variationsConfig = null;
-
         try {
             FileReader reader = new FileReader(variationsPath);
 
@@ -39,10 +39,9 @@ public class ObjectVariableGenerator {
         }
 
         JSONObject jsonConfig = (JSONObject) variationsConfig;
+
         JSONArray objects = (JSONArray) jsonConfig.get("objects");
-
         for (Object object : objects) {
-
             JSONObject objectDefinition = (JSONObject) object;
 
             //Getting the id
@@ -54,7 +53,7 @@ public class ObjectVariableGenerator {
                     objectDefinition.get("variableExtensions") != null ? (JSONArray) objectDefinition.get("variableExtensions") : new JSONArray();
 
             ArrayList<String> extensionStrings = new ArrayList<>();
-            for (Object ex : extensions) {
+            for (Object ex : extensions){
                 extensionStrings.add(ex.toString());
             }
 
