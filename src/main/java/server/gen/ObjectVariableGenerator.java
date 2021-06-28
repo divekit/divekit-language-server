@@ -97,6 +97,11 @@ public class ObjectVariableGenerator {
             lowerCaseVariables.add(key.toLowerCase(Locale.ROOT));
         }
 
+        // prevent duplicates
+        LinkedHashSet<String> set = new LinkedHashSet<>(lowerCaseVariables);
+        lowerCaseVariables.clear();
+        lowerCaseVariables.addAll(set);
+
         variationKeys.addAll(lowerCaseVariables);
     }
 
