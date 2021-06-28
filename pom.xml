@@ -6,7 +6,7 @@
 
     <groupId>thkoeln.archilab.divekit</groupId>
     <artifactId>DivekitLanguageServer</artifactId>
-    <version>0.95</version>
+    <version>1</version>
     <build>
         <plugins>
             <plugin>

@@ -5,10 +5,14 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.beans.Introspector;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Locale;
 
 public class ObjectVariableGenerator {
 
@@ -71,7 +75,29 @@ public class ObjectVariableGenerator {
             variationKeys.addAll(extensionList);
 
         }
+
+        generateLowerCaseVariables();
+
         return variationKeys;
+    }
+
+    /**
+     * Adds the lower case variables to the returned string list
+     */
+    private void generateLowerCaseVariables() {
+        List<String> lowerCaseVariables = new ArrayList<>();
+
+        for(String key : variationKeys) {
+            if(!(key.length() == 0)) {
+                char[] k = key.toCharArray();
+                k[0] = Character.toLowerCase(k[0]);
+
+                lowerCaseVariables.add(new String(k));
+            }
+            lowerCaseVariables.add(key.toLowerCase(Locale.ROOT));
+        }
+
+        variationKeys.addAll(lowerCaseVariables);
     }
 
     /**

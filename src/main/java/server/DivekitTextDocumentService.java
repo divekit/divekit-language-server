@@ -83,7 +83,7 @@ public class DivekitTextDocumentService implements TextDocumentService {
             CompletionItem completionItem = new CompletionItem();
             completionItem.setInsertText(itemTxt);
             completionItem.setLabel(itemTxt);
-            completionItem.setKind(CompletionItemKind.Snippet);
+            completionItem.setKind(CompletionItemKind.Variable);
             completionItem.setDetail("CompletionItem");
 
             providedItems.add(completionItem);
